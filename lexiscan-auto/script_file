@@ -1,0 +1,53 @@
+# Create the script file
+cat > scripts/create_test_pdf.py << 'EOF'
+from reportlab.pdfgen import canvas
+from reportlab.lib.pagesizes import letter
+from pathlib import Path
+
+def create_sample_contract():
+    """Create a sample test contract PDF"""
+
+    # Ensure directory exists
+    output_dir = Path("data/raw")
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    pdf_path = output_dir / "sample_contract.pdf"
+
+    # Create PDF
+    c = canvas.Canvas(str(pdf_path), pagesize=letter)
+
+    # Title
+    c.setFont("Helvetica-Bold", 16)
+    c.drawString(100, 750, "SERVICE AGREEMENT")
+
+    # Contract content
+    c.setFont("Helvetica", 12)
+    y = 700
+    lines = [
+        "",
+        "This Service Agreement is entered into as of January 15, 2024",
+        "by and between Acme Corporation Inc. (Client) and",
+        "Tech Solutions LLC (Service Provider).",
+        "",
+        "SERVICES: Provider shall deliver consulting services.",
+        "",
+        "COMPENSATION: Client agrees to pay $75,000.00 for services.",
+        "",
+        "TERM: This Agreement begins on February 1, 2024 and",
+        "continues until December 31, 2024.",
+        "",
+        "TERMINATION: Either party may terminate this Agreement",
+        "upon thirty (30) days written notice to the other party.",
+    ]
+
+    for line in lines:
+        c.drawString(100, y, line)
+        y -= 25
+
+    c.save()
+    print(f"✓ Successfully created: {pdf_path}")
+    print(f"✓ File size: {pdf_path.stat().st_size} bytes")
+
+if __name__ == "__main__":
+    create_sample_contract()
+EOF

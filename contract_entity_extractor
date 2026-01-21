@@ -1,0 +1,16 @@
+ Intelligent Document Processing (NLP)
+    Project Title: Legal Contract Entity Extractor (NER)
+    Product Brand Name: "LexiScan Auto"
+
+We're building a production-grade NLP (Natural Language Processing) system that:
+    1.Uses OCR (Optical Character Recognition) to extract text from PDFs
+    2.Applies a Named Entity Recognition (NER) model fine-tuned on legal documents
+    3.Implements rule-based validation to ensure accuracy
+    4.Exposes a REST API for integration with other systems
+    5.Includes MLOps infrastructure (monitoring, versioning, automated retraining)
+
+Real-World Impact:
+Before: 10 minutes per contract, error rate ~5%
+After: 5 seconds per contract, error rate <1%
+Scalability: Process 1000+ contracts per hour
+Cost Savings: Reduce manual labor by 90%
