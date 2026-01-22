@@ -1,4 +1,5 @@
 import pytesseract
+pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 from pdf2image import convert_from_path
 import pdfplumber
 from typing import Dict, List, Optional
@@ -184,3 +185,5 @@ class OCRProcessor:
         # Fall back to OCR
         logger.info("→ Using OCR (scanned document)")
         return self.extract_text_ocr(pdf_path)
+
+
