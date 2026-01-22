@@ -186,4 +186,3 @@ class OCRProcessor:
         logger.info("→ Using OCR (scanned document)")
         return self.extract_text_ocr(pdf_path)
 
-
