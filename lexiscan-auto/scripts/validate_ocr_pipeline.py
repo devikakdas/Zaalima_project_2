@@ -13,7 +13,7 @@ def main():
     processor = OCRProcessor()
 
     # Process the sample contract
-    result = processor.process_document("../data/raw/sample_contract.pdf")
+    result = processor.process_document("data/raw/sample_contract.pdf")
 
     if result['success']:
         print("\n" + "=" * 60)

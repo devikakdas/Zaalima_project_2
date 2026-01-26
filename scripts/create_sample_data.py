@@ -161,6 +161,8 @@ def generate_dataset(num_samples=100):
         template = TEMPLATES[i % len(TEMPLATES)]
         sample = create_training_sample(template)
         samples.append(sample)
+    return samples
+
 #-------------VERIFY LABELS-----------------------------------------------
 if __name__ == "__main__":
     sample = create_training_sample(TEMPLATES[0])
